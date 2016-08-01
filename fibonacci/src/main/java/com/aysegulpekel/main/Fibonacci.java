@@ -11,15 +11,16 @@ public class Fibonacci {
         }
         if (givenNumber <= 2) {
             return 1;
-        } else {
-            while (givenNumber > 2) {
-                result = previous + next;
-                previous = result - previous;
-                next = result;
-                givenNumber--;
-            }
-            return result;
         }
+
+        while (givenNumber > 2) {
+            result = previous + next;
+            previous = result - previous;
+            next = result;
+            givenNumber--;
+        }
+        return result;
+
     }
 
     public int calculateRecursively(int givenNumber) {
@@ -28,9 +29,8 @@ public class Fibonacci {
         }
         if (givenNumber < 2) {
             return 1;
-        } else {
-            return calculateRecursively(givenNumber - 1) + calculateRecursively(givenNumber - 2);
         }
+        return calculateRecursively(givenNumber - 1) + calculateRecursively(givenNumber - 2);
     }
 
     public int calculateWithBinet(int givenNumber) {
