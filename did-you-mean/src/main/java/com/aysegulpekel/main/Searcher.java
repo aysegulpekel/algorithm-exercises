@@ -8,7 +8,6 @@ import java.util.*;
 public class Searcher {
 
     public void printSimilarWords(List<String> similarWords) {
-
         if (similarWords.size() == 0) {
             System.out.println("Sorry, couldn't find any match.");
             return;
@@ -40,7 +39,6 @@ public class Searcher {
     }
 
     public TreeMap<String, Integer> findCandidates(String filePath, String enteredWord) throws IOException {
-
         BufferedReader bagOfWords = new BufferedReader(new FileReader(filePath));
 
         TreeMap<String, Integer> candidatesList = new TreeMap<>();
