@@ -51,7 +51,7 @@ public class Searcher {
             distance = calculator.calculateMinimumDistance(candidate, enteredWord);
             if (distance == 0) {
                 System.out.println("I found the word " + enteredWord);
-                return candidatesList;
+                return null;
             }
             candidatesList.put(candidate, distance);
         }

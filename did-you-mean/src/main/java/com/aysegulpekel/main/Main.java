@@ -17,8 +17,11 @@ public class Main {
         String basePath = new File("").getAbsolutePath().concat("/words.txt");
 
         TreeMap<String, Integer> candidatesList = searcher.findCandidates(basePath, enteredWord);
-        List<String> similarWords = searcher.getMostSimilarWords(candidatesList, enteredWord);
 
-        searcher.printSimilarWords(similarWords);
+        if (candidatesList != null) {
+            List<String> similarWords = searcher.getMostSimilarWords(candidatesList, enteredWord);
+
+            searcher.printSimilarWords(similarWords);
+        }
     }
 }
