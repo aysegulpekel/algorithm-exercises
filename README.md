@@ -41,8 +41,10 @@ Compute *n*th fibonacci number. In all possible ways.
 
 ## How is the solution?
 
-There are three approaches for this problem you can find with this module.
+There are three approaches with this module.
+
 ### 1.Recursive Solution
+
 Computes precisely Fibonacci’s definition of *F(n)* which is;
 
 *F(n) = F(n-1) + F(n-2)*
@@ -53,7 +55,7 @@ Computes precisely Fibonacci’s definition of *F(n)* which is;
 
 ### 2.Iterative Solution
 
-Calculates each number is the sum of the previous two step by step. A loop based solution. 
+Calculates each number as the sum of the previous two numbers. A loop based solution.
 
 **Pros:** Practical and naive as well. Reduced space complexity by swapping.
 
