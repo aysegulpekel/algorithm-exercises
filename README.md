@@ -8,7 +8,7 @@ This repository holds some programming exercises.
 Problems included: 
 
  - [Fibonacci Series](#fibonacci-series) 
- - [Did You Mean](#did-you-mean) 
+ - [Did You Mean?](#did-you-mean) 
 
 # Requirements
 
@@ -124,4 +124,49 @@ See below the computation times in nano seconds to calculate F(n):
 |44|2216|3627471960|1438|
 |45|2195|6287965036|1382|
 |46|2120|9611356359|1184|
+
+# Did You Mean?
+
+## What is the problem? 
+
+Suggest the most similar words to searched keyword.
+
+# Example Output
+
+```
+> Enter a word to search: example
+I found the word example
+
+> Enter a word to search: foo
+Did you mean?
+BOO
+COO
+FOB
+FOE
+FOG
+FOH
+FON
+FOOD
+FOOL
+FOOT
+```
+## How is the solution?
+
+This problem is solved by using minimum edit distance algorithm but there are other ways to compute word similarity such as n-grams, Hamming distance, Jaro–Winkler distance and many, good to search. 
+
+There are three class included:
+- MinEditDistanceCalculator Class:  
+Calculates the distance matrix for given two words. 
+Uses [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance)
+- Searcher Class: Searches keyword in given file (words.txt). 
+*findCandidates* method returns a dictionary for words in the file with their distance cost to entered word.  
+And *getMostSimilarWords* picks the lowest costed pairs from that dictionary in a list which has a limit as 10 suggestions. Since treemap is used, suggestions has alphabetical order and the while loop makes them descending cost order.
+
+- Main Class: Takes an input from user. Creates candidate words list.
+
+
+
+
+
+
 
