@@ -13,7 +13,7 @@ Problems included:
 # Requirements
 
 Java 8+ (*tested on Oracle JDK 1.8.0_77-b03*)
-\
+
 Maven 2+
 
 
@@ -33,40 +33,48 @@ For Did You Mean,
  
 # Fibonacci Series
 
-### What is the problem? 
+## What is the problem? 
+
 Compute *n*th fibonacci number. In all possible ways.
 
-### How is the solution?
+## How is the solution?
+
 There are three approaches for this problem you can find with this module.
-##### 1.Recursive Solution
+### 1.Recursive Solution
 Computes precisely Fibonacci’s definition of *F(n)* which is;
-\
+
 *F(n) = F(n-1) + F(n-2)*
-\
+
 **Pros:** Naive 
-\
+
 **Cons:** Recursive
-##### 2.Iterative Solution
+
+### 2.Iterative Solution
+
 Calculates each number is the sum of the previous two step by step. A loop based solution. 
-\
+
 **Pros:** Practical and naive as well. Reduced space complexity by swapping.
 
-##### 3.Binet's Formula
+### 3.Binet's Formula
+
  Finds fibonacci numbers using golden ratio.
- \
+ 
  [What is Binet's Formula?](http://mathworld.wolfram.com/BinetsFibonacciNumberFormula.html)
- \
+ 
 The problem is that the formula includes irrational numbers. Since the output computed as integer, it is rounded to the nearest integer of the real value. So this might be a little tricky if the program would allow us to compute bigger numbers. If you adjust the data types to long and try with bigger numbers you can get different numbers. Or you all get the correct numbers. It's up to the compiler's precision capabilities. 
-\
+
 **Pros:** Fast 
-\
+
 **Cons:** Unreliable
+
 ### Benchmarking
-You can see nano time for F(n) computation:
-\
+
 *MacBook Air (13-inch, Mid 2012) - 1,8 GHz Intel Core i5, 4 GB 1600 MHz DDR3*
-\
-*tested on Oracle JDK 1.8.0_77-b03*
+
+Since recursive function has exponential time complexity and binet's function is platform dependent, iterative function seems more reliable. But if the case is big number computation with time constraint and approx result is enough, better to go with Binet.
+
+See below the computation times in nano seconds to calculate F(n):
+
 
 | n | iterative | recursive   | binet  |
 | ------------- |:-------------:| -----:| -----:|
