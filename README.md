@@ -131,7 +131,7 @@ See below the computation times in nano seconds to calculate F(n):
 
 Suggest the most similar words to searched keyword.
 
-# Example Output
+## Example Output
 
 ```
 > Enter a word to search: example
