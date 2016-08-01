@@ -20,6 +20,9 @@ public class Searcher {
         }
     }
 
+    /*
+    getMostSimilarWords extracts the first 10 suggestions and orders by distance cost ascending and then alphabetically.
+     */
     public List<String> getMostSimilarWords(TreeMap candidates, String enteredWord) {
         List<String> mostSimilarWords = new ArrayList<>();
 
@@ -38,6 +41,9 @@ public class Searcher {
         return mostSimilarWords;
     }
 
+    /*
+    findCandidates creates a dictionary of words paired with their distance to entered keyword.
+     */
     public TreeMap<String, Integer> findCandidates(String filePath, String enteredWord) throws IOException {
         BufferedReader bagOfWords = new BufferedReader(new FileReader(filePath));
 
