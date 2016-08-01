@@ -21,6 +21,8 @@ Maven 2+
 
 `mvn package -DskipTests`
 
+Please make sure that your working direcory is set to the problem folder that you run. 
+
 For Fibonacci, 
 
 `java -jar target/fibonacci-0.1-jar-with-dependencies.jar`
@@ -47,7 +49,7 @@ Computes precisely Fibonacci’s definition of *F(n)* which is;
 
 **Pros:** Naive 
 
-**Cons:** Recursive
+**Cons:** Recursive :)
 
 ### 2.Iterative Solution
 
@@ -61,7 +63,7 @@ Calculates each number is the sum of the previous two step by step. A loop based
  
  [What is Binet's Formula?](http://mathworld.wolfram.com/BinetsFibonacciNumberFormula.html)
  
-The problem is that the formula includes irrational numbers. Since the output computed as integer, it is rounded to the nearest integer of the real value. So this might be a little tricky if the program would allow us to compute bigger numbers. If you adjust the data types to long and try with bigger numbers you can get different numbers. Or you all get the correct numbers. It's up to the compiler's precision capabilities. 
+The problem is that the formula includes irrational numbers. Since the output computed as integer, it is rounded to the nearest integer of the real value. So this might be a little tricky if the program would allow us to compute bigger numbers. If you adjust the data types to long and try with bigger numbers you can get wrong fibonacci values. Or you all get the correct values. It's up to the compiler's precision capabilities. 
 
 **Pros:** Fast 
 
@@ -71,7 +73,7 @@ The problem is that the formula includes irrational numbers. Since the output co
 
 *MacBook Air (13-inch, Mid 2012) - 1,8 GHz Intel Core i5, 4 GB 1600 MHz DDR3*
 
-Since recursive function has exponential time complexity and binet's function is platform dependent, iterative function seems more reliable. But if the case is big number computation with time constraint and approx result is enough, better to go with Binet.
+Since recursive function has exponential time complexity and Binet's function is platform dependent, iterative function seems more reliable. But if the case is big number computation with time constraint and approximate result is enough, better go with Binet.
 
 See below the computation times in nano seconds to calculate F(n):
 
@@ -149,6 +151,9 @@ FON
 FOOD
 FOOL
 FOOT
+
+> Enter a word to search: %
+Sorry, couldn't find any match.
 ```
 ## How is the solution?
 
@@ -157,12 +162,12 @@ This problem is solved by using minimum edit distance algorithm but there are ot
 There are three class included:
 - MinEditDistanceCalculator Class:  
 Calculates the distance matrix for given two words. 
-Uses [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance)
+Uses [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) .
 - Searcher Class: Searches keyword in given file (words.txt). 
 *findCandidates* method returns a dictionary for words in the file with their distance cost to entered word.  
-And *getMostSimilarWords* picks the lowest costed pairs from that dictionary in a list which has a limit as 10 suggestions. Since treemap is used, suggestions has alphabetical order and the while loop makes them descending cost order.
+And *getMostSimilarWords* picks the lowest costed pairs from that dictionary in a list which has a limit as 10 suggestions. Since treemap is used, suggestions has alphabetical order and the while loop makes them ascending cost order.
 
-- Main Class: Takes an input from user. Creates candidate words list.
+- Main Class: Takes an input from user. Creates candidate words list. Prints results.
 
 
 
